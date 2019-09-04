@@ -8,9 +8,10 @@
    ingredients: @recipe.ingredients,
    directions: @recipe.directions,
    image_url: @recipe.image_url, 
+   friendly_created_at: @recipe.created_at.strftime("%b %d, %Y"),
    formatted: {
                 ingredients: @recipe.ingredients_list,
-                directions: @recipe.directions.list,
+                directions: @recipe.directions_list,
                 prep_time: @recipe.formatted_prep_time
               }
 
