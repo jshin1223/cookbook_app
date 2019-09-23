@@ -1,13 +1,9 @@
 class Api::RecipesController < ApplicationController
   def index
-    puts "=" * 50
-    p current_user
-    puts "=" * 50
-
-
-    search_term = params[:search]
 
     @recipes = Recipe.all
+
+    search_term = params[:search]
 
     if search_term 
       @recipes = @recipes.where(
@@ -20,9 +16,7 @@ class Api::RecipesController < ApplicationController
 
     @recipes = @recipes.order(:id)
   
-      render 'index.json.jb'
-
-
+    render 'index.json.jb'
   end
 
   def create
